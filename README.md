@@ -12,3 +12,23 @@ So the project is using workflows that trigger on a pull request to the main bra
  - Press commit and "Create a new branch for this commit"
  - Change base to "main"
  - Submit pull request.
+ - See workflows running
+
+### Create a Fork
+
+- Press 'Fork'
+- Fork the project into your profile or organisation
+ - Add a comment or change some code
+ - Press commit and "Create a new branch for this commit"
+ - Change base to "main"
+ - Submit pull request.
+ - See workflows running
+
+### Download the codebase
+- Download the project
+- git init
+- git add .
+- git commit -m "DevSecOps"
+- git push to private repo
+- Go to GitHub and create pull request to main branch
+- See workflows running
