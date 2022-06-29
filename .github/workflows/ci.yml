@@ -51,7 +51,7 @@ jobs:
           DB_PASSWORD: password
           DB_PORT: 3306
 
-        run: cd main && vendor/bin/phpunit
+        run: cd api && vendor/bin/phpunit
 
       - name: Execute tests API repo via PHPUnit
         env:
