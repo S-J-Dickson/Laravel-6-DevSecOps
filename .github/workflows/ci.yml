@@ -42,3 +42,10 @@ jobs:
           DB_PORT: 3306
 
         run: vendor/bin/phpunit
+
+        api_testing:
+          name: Testing the API
+          uses: actions/checkout@v3
+          with:
+            repository:  S-DICKSON/Laravel-6-DevSecOps-API
+            path: api

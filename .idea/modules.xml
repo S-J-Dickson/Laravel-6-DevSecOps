@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/devsecops.iml" filepath="$PROJECT_DIR$/.idea/devsecops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../devsecops.api/.idea/devsecops.api.iml" filepath="$PROJECT_DIR$/../devsecops.api/.idea/devsecops.api.iml" />
     </modules>
   </component>
 </project>
