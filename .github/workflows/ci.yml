@@ -23,7 +23,17 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          path: main
+
+      - name: Checkout api repo
+        uses: actions/checkout@v3
+        with:
+          repository: S-DICKSON/Laravel-6-DevSecOps-API
+          path: api
+
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       - name: Install Dependencies
@@ -42,10 +52,3 @@ jobs:
           DB_PORT: 3306
 
         run: vendor/bin/phpunit
-
-        api_testing:
-          name: Testing the API
-          uses: actions/checkout@v3
-          with:
-            repository:  S-DICKSON/Laravel-6-DevSecOps-API
-            path: api
