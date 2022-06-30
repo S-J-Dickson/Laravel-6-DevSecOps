@@ -2,8 +2,7 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Micropply\Crm\Models\User;
+use App\User;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
