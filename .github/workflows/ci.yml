@@ -46,12 +46,12 @@ jobs:
       - name: Clear Config 🗑️
         run: |
           cd main && php artisan config:clear
-          cd main && php artisan cache:clear
+          && php artisan cache:clear
 
       - name: Prepare the application 🔧
         run: |
           cd main && cp .env.ci .env
-          cd main && php artisan key:generate
+          && php artisan key:generate
 
       - name: Migrate and seed database
         run: cd main && php artisan migrate:fresh --seed
