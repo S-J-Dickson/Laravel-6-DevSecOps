@@ -44,6 +44,8 @@ jobs:
         run: cd main && php artisan key:generate
       - name: Directory Permissions for main
         run: cd main && chmod -R 777 storage bootstrap/cache
+      - name: Migrate and seed database
+        run: php artisan migrate:fresh --seed
 
       - name: Copy .env for api
         run: php -r "file_exists('api/.env') || copy('api/.env.example', 'api/.env');"
