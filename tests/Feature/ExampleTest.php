@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Micropply\Crm\Models\User;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
@@ -17,5 +18,7 @@ class ExampleTest extends TestCase
         $response = $this->get('/');
 
         $response->assertStatus(200);
+
+        self::assertEquals(4, User::all()->count());
     }
 }
