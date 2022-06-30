@@ -1,7 +1,7 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
-use Micropply\Crm\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
