@@ -45,6 +45,15 @@ jobs:
       - name: Directory Permissions for main
         run: cd main && chmod -R 777 storage bootstrap/cache
 
+      - name: Create testing database
+      - env:
+         DB_CONNECTION: mysql
+         DB_DATABASE: test
+         DB_USERNAME: root
+         DB_PASSWORD: password
+         DB_PORT: 3306
+       run: cd main && php artisan migrate:fresh
+
       - name: Copy .env for api
         run: php -r "file_exists('api/.env') || copy('api/.env.example', 'api/.env');"
       - name: Install Dependencies for api
