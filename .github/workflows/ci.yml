@@ -54,7 +54,7 @@ jobs:
           php artisan key:generate
 
       - name: Migrate and seed database
-        run: cd main && php artisan migrate:fresh --seed
+        run: cd main && php artisan migrate
 
       - name: Copy .env for api
         run: php -r "file_exists('api/.env') || copy('api/.env.example', 'api/.env');"
