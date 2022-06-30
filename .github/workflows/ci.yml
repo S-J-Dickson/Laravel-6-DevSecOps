@@ -39,8 +39,7 @@ jobs:
 
       - name: Install Dependencies for main
         run: cd main && composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-      - name: Generate key for main
-        run: cd main && php artisan key:generate
+
       - name: Directory Permissions for main
         run: cd main && chmod -R 777 storage bootstrap/cache
 
@@ -49,8 +48,10 @@ jobs:
           cd main && php artisan config:clear
           cd main && php artisan cache:clear
 
-      - name: Copy .env for main
-        run: cd main && cp .env.ci .env
+      - name: Prepare the application 🔧
+        run: |
+          cd main && cp .env.ci .env
+          cd main && php artisan key:generate
 
       - name: Migrate and seed database
         run: cd main && php artisan migrate:fresh --seed
