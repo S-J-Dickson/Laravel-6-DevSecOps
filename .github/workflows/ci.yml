@@ -8,7 +8,7 @@ on:
 
 jobs:
   phpunit:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, ubuntu-latest]
     container:
       image: kirschbaumdevelopment/laravel-test-runner:7.3
 
@@ -84,3 +84,5 @@ jobs:
           DB_PORT: 3306
 
         run: cd api && vendor/bin/phpunit
+    
+          
