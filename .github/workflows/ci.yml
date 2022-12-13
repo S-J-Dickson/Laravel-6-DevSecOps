@@ -1,8 +1,6 @@
 name: Laravel Testing with MySql DB
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 
